@@ -8,157 +8,18 @@
           "title": "Azure Security Baseline (CIS L1)",
           "description": "Baseline op basis van CIS L1 met een Policy Initiative en centrale monitoring.",
           "prerequisites": [
-            {
-              "type": "Access",
-              "text": "Owner of User Access Administrator op (sub)Management Group scope"
-            },
-            {
-              "type": "Governance",
-              "text": "Management Group-hiërarchie ingericht (Tenant Root → Platform → Corp/Sandbox)"
-            },
-            {
-              "type": "Platform",
-              "text": "Resource provider 'Microsoft.PolicyInsights' en 'Microsoft.Security' geregistreerd"
-            },
-            {
-              "type": "Monitoring",
-              "text": "Central Log Analytics Workspace + Automation-account voor Updates (optioneel)"
-            },
-            {
-              "type": "Security",
-              "text": "Microsoft Defender for Cloud ingeschakeld op MG/subscription niveau"
-            },
-            {
-              "type": "Diagnostics",
-              "text": "Standaard Diagnostic Settings-doelen (LA / Event Hub / Storage) bepaald"
-            },
-            {
-              "type": "Standards",
-              "text": "Tagging-normen (owner, costCenter, env) en naming-conventies gedocumenteerd"
-            },
-            {
-              "type": "Tooling",
-              "text": "Azure CLI ≥ 2.60 en Bicep CLI ≥ 0.26 lokaal beschikbaar"
-            }
+            { "type": "Access", "text": "Owner of User Access Administrator op (sub)Management Group scope" },
+            { "type": "Governance", "text": "Management Group-hiërarchie ingericht (Tenant Root → Platform → Corp/Sandbox)" },
+            { "type": "Platform", "text": "Resource provider 'Microsoft.PolicyInsights' en 'Microsoft.Security' geregistreerd" },
+            { "type": "Monitoring", "text": "Centraal Log Analytics Workspace + Automation-account voor updates (optioneel)" },
+            { "type": "Security", "text": "Microsoft Defender for Cloud ingeschakeld op MG/subscription niveau" },
+            { "type": "Diagnostics", "text": "Standaard Diagnostic Settings-doelen (LA / Event Hub / Storage) bepaald" },
+            { "type": "Standards", "text": "Tagging-normen (owner, costCenter, env) en naming-conventies gedocumenteerd" },
+            { "type": "Tooling", "text": "Azure CLI ≥ 2.60 en Bicep CLI ≥ 0.26 lokaal beschikbaar" }
           ],
           "links": [
-            {
-              "label": "Azure Policy - Assign initiative",
-              "url": "https://learn.microsoft.com/azure/governance/policy/assign-policy-portal"
-            },
-            {
-              "label": "Microsoft Cloud Security Benchmark",
-              "url": "https://learn.microsoft.com/azure/security/benchmarks/overview"
-            }
-          ]
-        },
-        {
-          "id": "m365-defender-onboarding",
-          "title": "Microsoft Defender (MDC/MDE) Onboarding",
-          "description": "Tenant- en device-onboarding voor Microsoft Defender voor Cloud en Endpoint.",
-          "prerequisites": [
-            {
-              "type": "Access",
-              "text": "Global Administrator of Security Administrator in Entra ID"
-            },
-            {
-              "type": "Licensing",
-              "text": "Benodigde licenties (Defender for Endpoint P2 / Defender for Cloud plannen)"
-            },
-            {
-              "type": "Platform",
-              "text": "Device management kanaal (Intune, GPO, of ConfigMgr) beschikbaar"
-            },
-            {
-              "type": "Networking",
-              "text": "Egress naar Defender service-URL's toegestaan (proxy/firewall)"
-            },
-            {
-              "type": "Monitoring",
-              "text": "SIEM-koppeling (Sentinel) en data-retentiebeleid bepaald"
-            }
-          ],
-          "links": [
-            {
-              "label": "Defender for Endpoint onboarding",
-              "url": "https://learn.microsoft.com/microsoft-365/security/defender-endpoint/onboarding"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Platform / Landing Zone",
-      "solutions": [
-        {
-          "id": "caf-landing-zone",
-          "title": "Azure Landing Zone (CAF)",
-          "description": "CAF-conforme landing zone met MG-structuur, policy en netwerk hub-spoke.",
-          "prerequisites": [
-            {
-              "type": "Governance",
-              "text": "CAF-architectuurkeuzes vastgelegd (identity, networking, security, management)"
-            },
-            {
-              "type": "Platform",
-              "text": "Tenant initial setup + MG-hiërarchie + subscription design"
-            },
-            {
-              "type": "Identity",
-              "text": "Entra ID baseline (PIM, CA policies, break-glass)"
-            },
-            {
-              "type": "Networking",
-              "text": "Netwerkstrategie (Hub-Spoke, vWAN, Firewall, Private DNS)"
-            },
-            {
-              "type": "Tooling",
-              "text": "Infra-as-code gekozen (Bicep of Terraform) + pipelines (ADO/GitHub Actions)"
-            }
-          ],
-          "links": [
-            {
-              "label": "Cloud Adoption Framework - Landing zone",
-              "url": "https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Data & AI",
-      "solutions": [
-        {
-          "id": "azure-openai-deploy",
-          "title": "Azure OpenAI Deployment",
-          "description": "Voorwaarden voor het uitrollen van Azure OpenAI resources en modellen.",
-          "prerequisites": [
-            {
-              "type": "Access",
-              "text": "Owner/Contributor op target subscription + approver voor AOAI aanvraag"
-            },
-            {
-              "type": "Compliance",
-              "text": "Azure OpenAI gebruiksvoorwaarden geaccepteerd en use-case goedgekeurd"
-            },
-            {
-              "type": "Networking",
-              "text": "VNet integratie/Private Endpoint ontwerp indien private access vereist is"
-            },
-            {
-              "type": "Security",
-              "text": "Key management (Managed Identity/Key Vault) en RBAC role assignments"
-            },
-            {
-              "type": "Monitoring",
-              "text": "Quota/Rate limits bekend + logging/telemetry bestemmingen"
-            }
-          ],
-          "links": [
-            {
-              "label": "Azure OpenAI - quota & limits",
-              "url": "https://learn.microsoft.com/azure/ai-services/openai/quotas-limits"
-            }
+            { "label": "Azure Policy - Assign initiative", "url": "https://learn.microsoft.com/azure/governance/policy/assign-policy-portal" },
+            { "label": "Microsoft Cloud Security Benchmark", "url": "https://learn.microsoft.com/azure/security/benchmarks/overview" }
           ]
         }
       ]
