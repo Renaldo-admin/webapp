@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solution Prerequisites Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+</head>
+<body>
+  <header>
+    <h1>Solution Prerequisites Hub</h1>
+    <input id="search" type="search" placeholder="Zoek een oplossing (bv. 'baseline', 'landing zone')" />
+  </header>
+
+  <main>
+    <section id="buttons" class="grid"></section>
+
+    <section id="details" class="panel hidden">
+      <button id="closeDetails" class="link">⟵ Terug</button>
+      <h2 id="solutionTitle"></h2>
+      <p id="solutionDesc" class="muted"></p>
+
+      <div id="prereqContainer"></div>
+
+      <div class="actions">
+        <button id="copyMd">Copy as Markdown</button>
+        <button id="print">Print</button>
+        <a id="downloadJson" href="#" download>Download JSON</a>
+      </div>
+
+      <div id="links" class="links"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Config-first webapp • Bewerk <code>data/solutions.json</code> om oplossingen toe te voegen.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
